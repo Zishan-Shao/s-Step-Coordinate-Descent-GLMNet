@@ -3,6 +3,9 @@ Derive and implement a s-Step variant of coordinate descent in computing the GLM
 
 This project was based on the paper: Friedman J, Hastie T, Tibshirani R. Regularization Paths for Generalized Linear Models via Coordinate Descent. J Stat Softw. 2010;33(1):1-22. PMID: 20808728; PMCID: PMC2929880.
 
+
+## Detailed proofs can be found in my thesis: https://drive.google.com/file/d/1c-jdUHrU9nPqmYT3Ui0l8SemGwlvrbXH/view?usp=sharing
+
 --------------------------------------------------------------------------------------------------
 
 ### Algorithm Implementation:
