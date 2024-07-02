@@ -1,6 +1,6 @@
 import numpy as np
 
-def generate_customizable_libsvm_dataset(K, m, n, sparsity=0.1, mean_multiplier=5, cov_multiplier=10, filename='customizable_dataset.txt'):
+def generate_data(K, m, n, sparsity=0.1, mean_multiplier=5, cov_multiplier=10, filename='customizable_dataset.txt'):
     """
     Generates a customizable dataset in LIBSVM format with specified characteristics
     to make classification tasks adjustable in complexity.
@@ -29,7 +29,7 @@ def generate_customizable_libsvm_dataset(K, m, n, sparsity=0.1, mean_multiplier=
         elif sum(counts) < m:
             counts[np.argmin(counts)] += m - sum(counts)
     
-    # Generate feature means and covariances with adjustable complexity
+    # Generate feature means and covariances with modifiable complexity
     class_means = [np.random.randn(n) * mean_multiplier for _ in range(K)]
     class_covariances = [(np.diag(np.random.rand(n)) + 0.5) * np.random.rand(1) * cov_multiplier for _ in range(K)]
 
@@ -50,7 +50,7 @@ def generate_customizable_libsvm_dataset(K, m, n, sparsity=0.1, mean_multiplier=
                 line += "\n"
                 file.write(line)
 
-    print(f'Customizable dataset with {m} observations, {n} features, and {K} classes saved to {filename}')
+    print(f'Finish creating dataset: {m} observations, {n} features, and {K} classes saved to {filename}')
 
-# Example usage
-generate_customizable_libsvm_dataset(K=3, m=1000, n=10, sparsity=0.2, mean_multiplier=5, cov_multiplier=10, filename='customizable_synthetic_dataset.txt')
+# generate !!! 启动
+generate_data(K=3, m=1000, n=10, sparsity=0.2, mean_multiplier=5, cov_multiplier=10, filename='synthetic_dataset.txt')
